@@ -36,4 +36,3 @@ Route::get('/user/profil', 'UserController@profil');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
