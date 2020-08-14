@@ -30,3 +30,5 @@ Route::get('/komentar','KomentarController@index');
 
 Route::get('/buat_komentar','KomentarController@buat');
 Route::post('/buat_komentar/buat','KomentarController@buat_selesai');
+
+Route::get('/user/profil', 'UserController@profil');
