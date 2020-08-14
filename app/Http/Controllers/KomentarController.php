@@ -26,4 +26,8 @@ class KomentarController extends Controller
         ]);
         return redirect('/komentar');
     }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

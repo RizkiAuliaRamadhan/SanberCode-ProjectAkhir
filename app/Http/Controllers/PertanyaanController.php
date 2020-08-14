@@ -48,4 +48,8 @@ class PertanyaanController extends Controller
         $pertanyaan->delete();
         return redirect('/pertanyaan');
     }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }
