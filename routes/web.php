@@ -30,3 +30,6 @@ Route::get('/komentar','KomentarController@index');
 
 Route::get('/buat_komentar','KomentarController@buat');
 Route::post('/buat_komentar/buat','KomentarController@buat_selesai');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

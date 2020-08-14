@@ -18,6 +18,10 @@ class ProfilController extends Controller
         $profil = Profil::all();
         return view('admin/profil',['profil'=>$profil]);
     }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Show the form for creating a new resource.
