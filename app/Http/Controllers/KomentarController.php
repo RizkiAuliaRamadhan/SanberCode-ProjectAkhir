@@ -16,7 +16,9 @@ class KomentarController extends Controller
         return view('admin/buat_komentar');
     }
     public function buat_selesai(Request $request){
-        komentar::create([
+
+        if(session('succes')){
+            komentar::create([
             'id' => $request->id,
             'isi' => $request->isi,
             'created_at' => $request->created_at,
@@ -24,7 +26,13 @@ class KomentarController extends Controller
             'pertanyaan_id' => $request->pertanyaan_id,
             'profil_id' => $request->profil_id,
         ]);
+
         return redirect('/pertanyaan');
+
+        }else{
+             return view('admin/buat_komentar');
+        }
+        
     }
     public function __construct()
     {

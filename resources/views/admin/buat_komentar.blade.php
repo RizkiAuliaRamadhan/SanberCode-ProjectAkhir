@@ -21,7 +21,7 @@
             <label>pertanyaan_id</label>
             <input class="form-control" type="number" name="pertanyaan_id" required="required"> <br/>
             <label>profil_id</label>
-            <input class="form-control" type="number" name="profil_id" required="required"> <br/>
+            <input class="form-control" type="number" name="profil_id" placeholder="wajib membuat profil sebelum input" required="required"> <br/>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>

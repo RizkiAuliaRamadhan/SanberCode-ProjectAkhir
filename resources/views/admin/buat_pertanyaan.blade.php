@@ -24,7 +24,7 @@
                 <option value="3">php</option>
             </select>           
             <label>profil_id</label>
-            <input class="form-control" type="number" name="profil_id" required="required"> <br/>
+            <input class="form-control" type="number" name="profil_id" placeholder="wajib membuat profil sebelum input" required="required"> <br/>
             <label>created_at</label>
             <input class="form-control" type="date" name="created_at" required="required"> <br/>
             <label>updated_at</label>

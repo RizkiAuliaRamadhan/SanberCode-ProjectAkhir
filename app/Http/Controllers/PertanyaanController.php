@@ -19,7 +19,8 @@ class PertanyaanController extends Controller
         return view('admin/buat_pertanyaan');
     }
     public function buat_selesai(Request $request){
-        pertanyaan::create([
+        if(session('succes')){
+            pertanyaan::create([
             'id' => $request->id,
             'judul' => $request->judul,
             'isi' => $request->isi,
@@ -29,6 +30,11 @@ class PertanyaanController extends Controller
             'updated_at' => $request->updated_at
         ]);
         return redirect('/pertanyaan');
+
+        }else{
+            return view('admin/buat_pertanyaan');
+        }
+        
     }
     public function edit($id){
         $pertanyaan = pertanyaan::find($id);
