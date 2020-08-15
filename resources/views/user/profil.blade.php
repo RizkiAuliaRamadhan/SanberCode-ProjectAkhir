@@ -2,9 +2,9 @@
 
 @section('contentuser')
 
-<button class="btn btn-primary mt-3 ml-2">Tambah Pertanyaan</button>
+<a href="/user/pertanyaan" class="btn btn-primary mt-3 ml-3">Tambah Pertanyaan</a>
 
-<div class="timeline mt-3 ml-2">
+<div class="timeline mt-3 ml-3">
     <div class="time-label">
         <span class="bg-red">14 Agu. 2020</span>
     </div>
@@ -18,7 +18,7 @@
                 bisa memuat pertanyaan berbaris-baris
             </div>
             <div class="timeline-footer ml-1">
-                <a class="btn btn-secondary btn-sm">Add Comment</a>
+                <a class="btn btn-secondary btn-sm" href="/user/komentar">Add Comment</a>
                 <a class="btn btn-success btn-sm ml-3">Up Vote</a>
                 <a class="btn btn-danger btn-sm">Down Vote</a>
             </div>

@@ -16,39 +16,29 @@
 
   <title>StickFlow - User Page</title>
 
-  <!-- Font Awesome Icons -->
+
   <link rel="stylesheet" href="{{ asset('lte/plugins/fontawesome-free/css/all.min.css')}}">
-  <!-- Theme style -->
+
   <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css')}}">
-  <!-- Google Font: Source Sans Pro -->
+
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
-  <!-- Navbar -->
-  @include('user/header')
-  <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
+  @include('user/header')
+
+ 
   @include('user/sidebar')
 
-  <!-- Content Wrapper. Contains page content -->
+
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+
+    @yield('contentuser')
     
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <div class="content">
-      @yield('contentuser')
-    <!-- /.content -->
-    </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
+
     <div class="p-3">
       <h5>Title</h5>
       <p>Sidebar content</p>
