@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\pertanyaan;
+use App\komentar;
 use Illuminate\Http\Request;
 
 class PertanyaanController extends Controller
@@ -10,7 +11,8 @@ class PertanyaanController extends Controller
     //
     public function pertanyaan(){
     $pertanyaan = pertanyaan::all();
-    return view('admin/pertanyaan',['pertanyaan'=>$pertanyaan]);
+    $komentar = komentar::all();
+    return view('admin/pertanyaan',['pertanyaan'=>$pertanyaan],['komentar'=>$komentar]);
     }
 
     public function buat(){

@@ -24,7 +24,7 @@ class KomentarController extends Controller
             'pertanyaan_id' => $request->pertanyaan_id,
             'profil_id' => $request->profil_id,
         ]);
-        return redirect('/komentar');
+        return redirect('/pertanyaan');
     }
     public function __construct()
     {

@@ -1,42 +1,27 @@
 @extends('admin/admin')
 @section('content')
-    
+@foreach($pertanyaan as $p)
+<div class="timeline mt-3 ml-2">
+    <div>
+        <div class="timeline-item pt-1 pb-1">
+            <span class="time"><i class="fas fa-clock"></i> {{$p -> created_at}}</span>
+            <h3 class="timeline-header ml-1"><a href="#">{{ Auth::user()->name}}</a> menambahkan pertanyaan baru 
+                <a href="/pertanyaan/edit/{{$p -> id}}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="/pertanyaan/hapus/{{$p -> id}}" class="btn btn-danger btn-sm">Hapus</a></h3>
 
-
-
-<div class="container">
-    <div class="card mt-5">
-        <div class="card-body">
-            <table class="table table-bordered table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th>Id_Pertanyaan</th>
-                        <th>Judul</th>
-                        <th>Isi</th>
-                        <th>Tanggal Dibuat</th>
-                        <th>Tanggal Diperbarui</th>
-                        <th>Profil Id</th>
-                        <th>Opsi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($pertanyaan as $p)
-                    <tr>
-                        <td>{{ $p->id }}</td>
-                        <td>{{ $p->judul }}</td>
-                        <td>{{ $p->isi }}</td>
-                        <td>{{ $p->created_at }}</td>
-                        <td>{{ $p->updated_at }}</td>
-                        <td>{{$p->profil_id}}</td>
-                        <td>
-                        <a href="/pertanyaan/edit/{{$p -> id}}" class="btn btn-warning">Edit</a>
-                            <a href="/pertanyaan/hapus/{{$p -> id}}" class="btn btn-danger">Hapus</a>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            <div class="timeline-body ml-1">
+               <h5>Judul : {{$p->judul}}</h5>  <br>
+                {{$p->isi}}
+            </div>
+            @include('admin/komen_pertanyaan')
+            <div class="timeline-footer ml-1">
+                {{$p -> tag}}
+                <a href="/buat_komentar" class="btn btn-secondary btn-sm">Add Comment</a>
+                <a class="btn btn-success btn-sm ml-3">Up Vote</a>
+                <a class="btn btn-danger btn-sm">Down Vote</a>
+            </div>
         </div>
     </div>
 </div>
+@endforeach
 @endsection

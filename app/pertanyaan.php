@@ -9,4 +9,8 @@ class pertanyaan extends Model
     //
     protected $table = "pertanyaans";
     protected $fillable = ['id','judul','isi','tag','profil_id','cretaed_at','updated_at'];
+
+    public function komentars(){
+        return $this->hasMany('App\komentar');
+    }
 }
