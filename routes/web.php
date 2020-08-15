@@ -32,6 +32,10 @@ Route::get('/buat_komentar','KomentarController@buat');
 Route::post('/buat_komentar/buat','KomentarController@buat_selesai');
 
 Route::get('/user/profil', 'UserController@profil');
+Route::get('/user/komentar', 'UserController@komentar');
+Route::post('/user/komentar', 'UserController@createkomentar');
+Route::get('/user/pertanyaan', 'UserController@pertanyaan');
+Route::post('/user/pertanyaan', 'UserController@createpertanyaan');
 
 Auth::routes();
 
